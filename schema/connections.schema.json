@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "instance_port",
+        "cell_port"
+      ]
+    },
+    "owner_instance_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "instance_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "port": {
+      "type": "string",
+      "minLength": 1
+    },
+    "terminal_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "net_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "connected",
+        "unconnected",
+        "unresolved"
+      ]
+    },
+    "evidence": {
+      "enum": [
+        "db",
+        "none"
+      ]
+    },
+    "reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    }
+  },
+  "required": [
+    "id",
+    "path",
+    "kind",
+    "owner_instance_id",
+    "instance_id",
+    "port",
+    "terminal_id",
+    "net_id",
+    "status",
+    "evidence",
+    "reason"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "library": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cell": {
+      "type": "string",
+      "minLength": 1
+    },
+    "view": {
+      "type": "string",
+      "minLength": 1
+    },
+    "db_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "terminals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "direction": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "direction"
+        ]
+      }
+    },
+    "local_net_names": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "id",
+    "path",
+    "library",
+    "cell",
+    "view",
+    "db_id",
+    "terminals",
+    "local_net_names"
+  ]
+}

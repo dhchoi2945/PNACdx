@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pgcheck"
+version = "0.1.0"
+description = "Offline Virtuoso connectivity extraction and validation — Phase 0"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+pgcheck = "pgcheck.cli:main"
+
+[tool.setuptools]
+packages = ["pgcheck"]

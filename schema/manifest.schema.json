@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "complete",
+        "incomplete"
+      ]
+    },
+    "root_instance_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "top": {
+      "type": "object",
+      "properties": {
+        "library": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cell": {
+          "type": "string",
+          "minLength": 1
+        },
+        "view": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "library",
+        "cell",
+        "view"
+      ]
+    },
+    "files": {
+      "type": "object",
+      "properties": {
+        "cells": {
+          "const": "cells.jsonl"
+        },
+        "instances": {
+          "const": "instances.jsonl"
+        },
+        "nets": {
+          "const": "nets.jsonl"
+        },
+        "connections": {
+          "const": "connections.jsonl"
+        },
+        "unresolved": {
+          "const": "unresolved.jsonl"
+        }
+      },
+      "required": [
+        "cells",
+        "instances",
+        "nets",
+        "connections",
+        "unresolved"
+      ]
+    },
+    "counts": {
+      "type": "object",
+      "properties": {
+        "cells": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "instances": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "nets": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "connections": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unresolved": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "cells",
+        "instances",
+        "nets",
+        "connections",
+        "unresolved"
+      ]
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "binding_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "saved_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "connectivity_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "placement_support": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pin_helper_policy": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "binding_policy",
+        "saved_status",
+        "connectivity_status",
+        "placement_support",
+        "pin_helper_policy"
+      ]
+    },
+    "validation_context": {
+      "enum": [
+        "synthetic",
+        "virtuoso_unverified",
+        "virtuoso_internal"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "status",
+    "root_instance_id",
+    "top",
+    "files",
+    "counts",
+    "capabilities",
+    "validation_context"
+  ]
+}

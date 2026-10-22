@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "parent_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "cell_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "master": {
+      "type": "object",
+      "properties": {
+        "library": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cell": {
+          "type": "string",
+          "minLength": 1
+        },
+        "view": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "library",
+        "cell",
+        "view"
+      ]
+    },
+    "selected": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "library": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cell": {
+          "type": "string",
+          "minLength": 1
+        },
+        "view": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "library",
+        "cell",
+        "view"
+      ]
+    },
+    "placement": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "orientation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "coordinate_system": {
+          "const": "parent_local"
+        },
+        "units": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "orientation",
+        "coordinate_system",
+        "units"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "path",
+    "name",
+    "parent_id",
+    "cell_id",
+    "master",
+    "selected",
+    "placement"
+  ]
+}
